@@ -3,6 +3,8 @@ import React from 'react'
 import logo from '../assets/logo.png'
 import { GrLocation } from "react-icons/gr";
 import { CiShoppingCart } from "react-icons/ci"
+import { FaSearch } from "react-icons/fa";
+
 
 export const Navbar = () => {
     
@@ -24,8 +26,16 @@ export const Navbar = () => {
                 </div>
                 </a>
             </div>
-            <div className='flex w-full'>
-                <div>Search box</div>
+            <div className='flex w-full p-2'>
+                <div className='w-full flex flex-row flex-1 justify-between items-center bg-white rounded-md text-black'>
+                    <div className='bg-slate-300 cursor-pointer rounded-l-md h-full flex items-center p-1 px-2'>
+                        <span className='text-sm'>All</span>
+                    </div>
+                    <div className='w-full h-full'><input type='text' placeholder='Search item...' className='w-full h-full bg-transparent focus:outline-0 px-2'/></div>
+                    <div className='p-2 bg-yellow-500 cursor-pointer rounded-r-md h-full flex justify-center items-center'>
+                        <FaSearch/>
+                    </div>
+                </div>
             </div>
             <div className='flex'>
                 <div className='p-2 cursor-pointer hover:outline hover:outline-1 flex justify-center items-center'><span className='text-lg'>EN</span></div>
