@@ -47,7 +47,7 @@ export const Navbar = () => {
                     <span className='font-semibold'>Account & Lists</span>
                 </div>
                 
-                <div className='p-2 hover:outline cursor-pointer hover:outline-1 flex items-center font-semibold ' >Orders</div>
+                <Link to={'/order'} className='p-2 hover:outline cursor-pointer hover:outline-1 hover:text-white text-white flex items-center font-semibold ' >Orders</Link>
                 
                 <Link to='/cart' className='hover:outline hover:outline-1 cursor-pointer flex justify-center items-center p-2'>
                     <CiShoppingCart className='text-white text-2xl' />
