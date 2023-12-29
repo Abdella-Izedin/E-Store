@@ -4,7 +4,7 @@ import logo from '../assets/logo.png'
 import { GrLocation } from "react-icons/gr";
 import { CiShoppingCart } from "react-icons/ci"
 import { FaSearch } from "react-icons/fa";
-
+import { Link } from 'react-router-dom';
 
 export const Navbar = () => {
     
@@ -13,9 +13,11 @@ export const Navbar = () => {
         style={{backgroundColor:'#131921'}}
          className={`flex flex-1 flex-row justify-between`}>
             <div className='flex items-center'>
-                <a className='cursor-pointer h-full bg-white flex items-center'><div className='p-2 bg-white'>
-                    <img src={logo} style={{ width: 'calc(100% + 0.5vw)'}}/>
-                </div></a>
+                <Link to='/' className='cursor-pointer h-full bg-white flex items-center'>
+                    <div className='p-2 bg-white'>
+                        <img src={logo} style={{ width: 'calc(100% + 0.5vw)'}}/>
+                    </div>
+                </Link>
                 <a className='cursor-pointer text-white'>
                 <div className='p-2 flex no-wrap items-end'>
                     <GrLocation size={'calc(1rem + 0.5vw)'}/>
@@ -47,10 +49,10 @@ export const Navbar = () => {
                 
                 <div className='p-2 hover:outline cursor-pointer hover:outline-1 flex items-center font-semibold ' >Orders</div>
                 
-                <div className='hover:outline hover:outline-1 cursor-pointer flex justify-center items-center p-2'>
+                <Link to='/cart' className='hover:outline hover:outline-1 cursor-pointer flex justify-center items-center p-2'>
                     <CiShoppingCart className='text-white text-2xl' />
                     <span className=' absolute top-[40%] text-yellow-500 text-sm' style={{transform: 'translateY(-100%)'}}>0</span>
-                </div>
+                </Link>
             </div>
         </div>
         <div></div>
