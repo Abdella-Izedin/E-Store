@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import {useSelector} from 'react-redux'
 import logo from '../assets/logo.png'
 import { GrLocation } from "react-icons/gr";
 import { CiShoppingCart } from "react-icons/ci"
@@ -8,6 +9,17 @@ import { Link } from 'react-router-dom';
 
 export const Navbar = () => {
     
+    const cartCount = useSelector((state)=>state.cart.value.length)
+
+    const [state, setState] = useState({
+        cartItemsCount: cartCount
+    });
+
+    useEffect(() => {
+      
+    }, [state])
+    
+
     return <nav className='fixed z-50 top-0 left-0 w-full'>
         <div
         style={{backgroundColor:'#131921'}}
@@ -51,7 +63,7 @@ export const Navbar = () => {
                 
                 <Link to='/cart' className='hover:outline hover:outline-1 cursor-pointer flex justify-center items-center p-2'>
                     <CiShoppingCart className='text-white text-2xl' />
-                    <span className=' absolute top-[40%] text-yellow-500 text-sm' style={{transform: 'translateY(-100%)'}}>0</span>
+                    <span className=' absolute top-[40%] text-yellow-500 text-sm' style={{transform: 'translateY(-100%)'}}>{state.cartItemsCount}</span>
                 </Link>
             </div>
         </div>

@@ -1,5 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+
+import {withMT} from '@material-tailwind/react/utils'
+
+export default withMT({
   content: [],
   presets: [],
   darkMode: 'media', // or 'class'
@@ -1060,5 +1063,5 @@ export default {
     },
   },
   plugins: [],
-}
+});
 
